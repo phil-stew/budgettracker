@@ -1,0 +1,13 @@
+{
+    "name": "Budget Tracker",
+    "short_name": "BudgetT",
+    "icons": [
+        {
+
+        }
+    ],
+    "start_url": "/",
+    "description": "An application that allows you to make a budget.",
+    "display": "standalone",
+    "background_color": "#0000FF"
+}
