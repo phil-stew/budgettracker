@@ -43,19 +43,34 @@ getAll.onsucess = function() {
         })
           .then((response) => response.json())
           .then((res) => {
-            // If our returned response is not empty
+          
             if (res.length !== 0) {
-              // Open another transaction to BudgetStore with the ability to read and write
+              
               transaction = db.transaction(['BudgetStore'], 'readwrite');
   
-              // Assign the current store to a variable
-              const currentStore = transaction.objectStore('BudgetStore');
-              currentStore.clear();
+ 
+              const currentSave = transaction.objectStore('BudgetStore');
+              currentSave.clear();
               console.log("clearing store");
             }
           });
+      }}}
+
+request.onsuccess = function (e) {
+    console.log('success');
+    db = e.target.result;
+
+    if (navigator.onLine) {
+        console.log('Backend online! 🗄️');
+        checkDatabase();
       }
+    };
 
-}
+const saveRecord = (record) => {
+    console.log('Save record invoked');
+    const transaction = db.transaction(['BudgetStore'], 'readwrite');
+    const save = transaction.objectStore('BudgetStore');
+    save.add(record);
+  };
 
-}
+  window.addEventListener('online', checkDatabase);
