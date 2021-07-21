@@ -45,6 +45,8 @@ const FILES_TO_CACHE = [
     );
   });
   
+
+  
   self.addEventListener('fetch', (event) => {
     if (event.request.url.startsWith(self.location.origin)) {
       event.respondWith(
