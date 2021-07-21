@@ -12,8 +12,9 @@ or you can open [here](https://budgettk.herokuapp.com/)
 
 this app can keep track of your income and expeses 
 while keep a runing total simple name the transaction and the amount 
-the either and or subtract the funds
-
+then either and or subtract the funds
+the app work offline how ever i have unable to get the offline to 
+update upon refreshing 
 
 
 ## Contributing
