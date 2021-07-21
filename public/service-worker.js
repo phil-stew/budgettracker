@@ -47,20 +47,12 @@ const FILES_TO_CACHE = [
 
   
   self.addEventListener('fetch', (event) => {
-    if (event.request.url.startsWith(self.location.origin)) {
+    if (event.request.url.includes('/api/')) {
       event.respondWith(
-        caches.match(event.request).then((cachedResponse) => {
-          if (cachedResponse) {
-            return cachedResponse;
-          }
-  
-          return caches.open(DATA_CACHE_NAME).then((cache) => {
-            return fetch(event.request).then((response) => {
-              return cache.put(event.request, response.clone()).then(() => {
-                return response;
-              });
-            });
-          });
+         caches.open(DATA_CACHE_NAME).then(async (cache) => {
+            const response = await fetch(event.request);
+           await cache.put(event.request, response.clone());
+           return response;
         })
       );
     }

@@ -21,8 +21,8 @@ Pull requests are welcome, Phillip Stewat as made most of the changes required f
  
 ## Show App
 
-![opening](img/openpage.png)
-![chart](img/chart.png)
+![opening](img/local.png)
+![chart](img/local2.png)
 ![cardio](img/cardio.png)
 ![weight](img/res.png)
 
