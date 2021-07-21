@@ -26,9 +26,9 @@ function workingDB() {
 
 let transaction = dataB.transaction(['BudgetStore'], 'readwrite');
 
-const save = transaction.objectStore('BudgetStore');
+const store = transaction.objectStore('BudgetStore');
 
-const getAll = save.getAll()
+const getAll = store.getAll()
 
 getAll.onsucess = function() {
 
@@ -49,8 +49,8 @@ getAll.onsucess = function() {
               transaction = db.transaction(['BudgetStore'], 'readwrite');
   
  
-              const currentSave = transaction.objectStore('BudgetStore');
-              currentSave.clear();
+              const currentstore = transaction.objectStore('BudgetStore');
+              currentstore.clear();
               console.log("clearing store");
             }
           });
@@ -66,11 +66,11 @@ request.onsuccess = function (e) {
       }
     };
 
-const saveRecord = (record) => {
-    console.log('Save record invoked');
+const storeRecord = (record) => {
+    console.log('store record invoked');
     const transaction = db.transaction(['BudgetStore'], 'readwrite');
-    const save = transaction.objectStore('BudgetStore');
-    save.add(record);
+    const store = transaction.objectStore('BudgetStore');
+    store.add(record);
   };
 
   window.addEventListener('online', checkDatabase);
