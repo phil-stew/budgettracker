@@ -21,10 +21,9 @@ Pull requests are welcome, Phillip Stewat as made most of the changes required f
  
 ## Show App
 
-![opening](img/local.png)
-![chart](img/local2.png)
-![cardio](img/cardio.png)
-![weight](img/res.png)
+![deployed on localhost](img/local.png)
+![deployed on localhost](img/local2.png)
+![deployed on heroku](img/heroo.png)
 
 showing app working on local host 
 
