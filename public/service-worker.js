@@ -1,8 +1,7 @@
 
-
-self.addEventListener("fetch", event => {
-  console.log("You fetched " + event.url);
-});
+// self.addEventListener("fetch", event => {
+//   console.log("You fetched " + event.url);
+// });
 
 
 
