@@ -22,9 +22,9 @@ Pull requests are welcome, Phillip Stewat as made most of the changes required f
  
 ## Show App
 
-![deployed on localhost](img/local.png)
-![deployed on localhost](img/local2.png)
-![deployed on heroku](img/heroo.png)
+![deployed on localhost](./img/local.png)
+![deployed on localhost](./img/local2.png)
+![deployed on heroku](./img/heroo.png)
 
 showing app working on local host 
 
