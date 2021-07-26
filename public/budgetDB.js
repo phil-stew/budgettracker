@@ -10,7 +10,7 @@ request.onupgradeneeded = function (e) {
 
     const { oldVersion } = e;
     const newVersion = e.newVersion || dataB.version
-console.log(`DB Updated from version ${oldVersion} to ${newVersion}`)
+console.log(`Updated from version ${oldVersion} to ${newVersion}`);
 
 dataB = e.target.result;
 
@@ -64,7 +64,7 @@ getAll.onsucess = function() {
           
             if (res.length !== 0) {
               
-              transaction = db.transaction(['BudgetStore'], 'readwrite');
+              transaction = dataB.transaction(['BudgetStore'], 'readwrite');
   
  
               const currentstore = transaction.objectStore('BudgetStore');
@@ -76,7 +76,7 @@ getAll.onsucess = function() {
 
 request.onsuccess = function (e) {
     console.log('success');
-    db = e.target.result;
+    dataB = e.target.result;
 
     if (navigator.onLine) {
         console.log('Backend online!');
@@ -86,9 +86,9 @@ request.onsuccess = function (e) {
 
 const storeRecord = (record) => {
     console.log('store record invoked');
-    const transaction = db.transaction(['BudgetStore'], 'readwrite');
+    const transaction = dataB.transaction(['BudgetStore'], 'readwrite');
     const store = transaction.objectStore('BudgetStore');
     store.add(record);
   };
 
-  window.addEventListener('online', checkDatabase);
+  window.addEventListener('online', workingDB);
