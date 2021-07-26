@@ -19,9 +19,9 @@ const FILES_TO_CACHE = [
     'https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css',
   ];
   
-  //const CACHE_NAME = "static-cache-v2";
+  const CACHE_NAME = "static-cache-v2";
   const DATA_CACHE_NAME = "data-cache-v1";
-  let cache_name = "Budget"; 
+  
 
   
   self.addEventListener('install', (event) => {
