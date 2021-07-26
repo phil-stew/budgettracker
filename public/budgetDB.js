@@ -22,6 +22,24 @@ request.onerror = function (e) {
     console.log(`Woops! ${e.target.errorCode}`);
   };
 
+request.onsuccess = function (e) {
+  console.log('success')
+  dataB = e.target.result;
+}
+
+
+if (navigator.online){
+  console.log('backend online')
+  workingDB()
+}
+
+
+
+
+
+
+
+
 function workingDB() {
 
 let transaction = dataB.transaction(['BudgetStore'], 'readwrite');
@@ -61,8 +79,8 @@ request.onsuccess = function (e) {
     db = e.target.result;
 
     if (navigator.onLine) {
-        console.log('Backend online! 🗄️');
-        checkDatabase();
+        console.log('Backend online!');
+        workingDB();
       }
     };
 
