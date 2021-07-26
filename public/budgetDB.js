@@ -84,11 +84,11 @@ request.onsuccess = function (e) {
       }
     };
 
-const storeRecord = (record) => {
+const saveRecord = (record) => {
     console.log('store record invoked');
     const transaction = dataB.transaction(['BudgetStore'], 'readwrite');
     const store = transaction.objectStore('BudgetStore');
-    store.add(record);
+    storeRecord.add(record);
   };
 
   window.addEventListener('online', workingDB);
